@@ -1,16 +1,25 @@
-import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./Components/Login/Login";
+import './App.css';
+import Login from './Components/Forms/login';
+import Register from './Components/Forms/RegistroUsuarios';
+import Paquete from './Components/Forms/RegistroPaquetes';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 
 function App() {
   return (
+
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login />}></Route>
-        <Route path="/dashboard" element={<h1>Dashboard</h1>}></Route>
-      </Routes>
+      
+      <div className="App">
+        <Routes>
+        <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />          
+          <Route path="/Register" element={<Register />} />
+          <Route path="/paquete" element={<Paquete />} />
+        </Routes>
+      </div>
     </BrowserRouter>
-  );
+  )
 }
 
 export default App;
